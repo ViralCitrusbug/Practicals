@@ -1,10 +1,24 @@
 import './App.css';
-import TimerPract from './componants/TimerPract';
+import Home from './componants/Home';
+import AddUser from './componants/AddUser';
+import EditUser from './componants/EditUser';
+import { Routes, Link ,Route } from 'react-router-dom';
+import { UserDataProvider } from './componants/UserData';
 function App() {
   return (
-    <div className="App">
-      <TimerPract />
-    </div>
+      
+        <>
+          <UserDataProvider>
+            <h1>NavBar</h1>
+            <Routes>
+              <Route path="/" element={<Home />}/>
+              <Route path="/add" element={<AddUser />}/>
+              <Route path="/edit/:id" element={<EditUser />}/>          
+            </Routes>
+          </UserDataProvider>
+        </>
+      
+ 
   );
 }
 

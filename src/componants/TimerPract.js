@@ -6,10 +6,12 @@ function TimerPract() {
     const [Show, setShow] = useState(true)
     const [Increase, setIncrease] = useState(false)
     const tick = () => {
-        if (TimerRev == 1){
+        if (TimerRev === 1){
             setShow(false)
         }
-        Increase?setTimer(PreveCount => Show?PreveCount + 1:PreveCount):setTimerRev(PreveCount => Show?PreveCount - 1:PreveCount)
+        Increase?
+        setTimer(PreveCount => Show?PreveCount + 1:PreveCount):
+        setTimerRev(PreveCount => Show?PreveCount - 1:PreveCount)
       }
     useEffect(() => {
 
